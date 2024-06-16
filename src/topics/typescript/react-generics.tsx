@@ -26,6 +26,21 @@ const NumberList = () => (
   <List items={numbers} renderItem={(item) => <span>{item}</span>} />
 );
 
+const users = [
+  { id: 1, name: "Alice" },
+  { id: 2, name: "Bob" },
+];
+const UserList = () => (
+  <List
+    items={users}
+    renderItem={(item) => (
+      <span>
+        {item.id} - {item.name}
+      </span>
+    )}
+  />
+);
+
 //GENERIC CONTEXT
 interface ContextProps<T> {
   value: T;
@@ -126,8 +141,10 @@ interface UserProfile {
 }
 
 // Usage
-const { useGenericContext: useUserProfileContext, GenericProvider: UserProfileProvider } =
-  createGenericContext<UserProfile>();
+const {
+  useGenericContext: useUserProfileContext,
+  GenericProvider: UserProfileProvider,
+} = createGenericContext<UserProfile>();
 
 const ProfileComponent = () => {
   const { value, updateValue } = useUserProfileContext();

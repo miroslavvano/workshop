@@ -1,5 +1,6 @@
 import { useRef } from "react";
 import { InputComponent } from "../../components/input";
+import { ExpensiveComponent } from "../../components/expensive-component";
 
 export const UncontrolledForm: React.FC = () => {
   const nameRef = useRef<HTMLInputElement>(null);
@@ -29,14 +30,14 @@ export const UncontrolledForm: React.FC = () => {
         defaultValue="john@example.com"
       />
 
-      {/* <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} /> */}
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
 
       <button type="submit">Submit</button>
     </form>

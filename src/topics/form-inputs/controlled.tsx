@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { InputComponent } from "../../components/input";
+import { ExpensiveComponent } from "../../components/expensive-component";
 
 export const ControlledForm: React.FC = () => {
   const [name, setName] = useState("John Doe");
@@ -35,14 +36,14 @@ export const ControlledForm: React.FC = () => {
         onChange={handleEmailChange}
       />
 
-      {/* <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
       <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} /> */}
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
 
       <button type="submit">Submit</button>
     </form>

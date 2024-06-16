@@ -10,6 +10,7 @@ import { PerformanceWorker } from "./pages/PerformanceWorker";
 import { ControlledFormPage } from "./pages/ControlledFormPage";
 import { FormInputs } from "./pages/FormInputs";
 import { TypeVsInterface } from "./pages/TypeVsInterface";
+import { WebWorkers } from "./pages/WebWorkers";
 
 function App() {
   useEffect(() => {
@@ -47,6 +48,9 @@ function App() {
             <Link to="/async">Async</Link>
           </li>
           <li>
+            <Link to="/web-worker">Web workers</Link>
+          </li>
+          <li>
             <Link to="/push-worker">Push Worker</Link>
           </li>
           <li>
@@ -61,6 +65,7 @@ function App() {
         <Route path="/form-inputs" element={<FormInputs />} />
         <Route path="/uncontrolled" element={<UncontrolledFormPage />} />
         <Route path="/controlled" element={<ControlledFormPage />} />
+        <Route path="/web-worker" element={<WebWorkers />} />
         <Route path="/push-worker" element={<PushWorker />} />
         <Route path="/performance-worker" element={<PerformanceWorker />} />
         <Route path="*" element={<NotFound />} />
