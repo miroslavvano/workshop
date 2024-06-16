@@ -1,5 +1,10 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
+type Hello = string;
+interface World {
+  world: string;
+}
+
 const isDone = false;
 const decimal = 6;
 const color = "blue";
@@ -39,6 +44,7 @@ anything = false;
 const notSure: unknown = 4;
 const isNotSureInteger = typeof notSure === "number";
 
+//type intersection
 interface Key {
   letter: string;
 }

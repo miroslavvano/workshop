@@ -1,5 +1,4 @@
 /**
-import useFetch from './useFetch.solution';
  * Implement a custom React hook that fetches data from a given URL. 
  * The hook must handle loading, success, and error states.
  * 

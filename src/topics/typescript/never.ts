@@ -54,11 +54,17 @@ function handleFruit(fruit: Fruit): string {
 //overloading
 function processInput(input: number): string;
 function processInput(input: string): number;
-function processInput(input: number | string): number | string {
+function processInput(input: boolean): boolean;
+
+function processInput(
+  input: number | string | boolean
+): number | string | boolean {
   if (typeof input === "number") {
     return input.toString();
   } else if (typeof input === "string") {
     return input.length;
+  } else if (typeof input === "boolean") {
+    return !input;
   } else {
     return assertNever(input);
   }

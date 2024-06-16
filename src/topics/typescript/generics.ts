@@ -47,7 +47,8 @@ const spreadedArray = spread([1, 2, 3], ["a", "b", "c"], [true, false]);
 console.log(mergedObject.name);
 console.log(mergedObject.age);
 
-//INTERFACES
+//type aj interface
+type KeyValuePairType<Key, Value> = { key: Key; value: Value };
 interface KeyValuePair<Key, Value> {
   key: Key;
   value: Value;

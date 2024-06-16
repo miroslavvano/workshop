@@ -19,6 +19,7 @@ export const ExpensiveComponent: React.FC<ExpensiveComponentProps> = ({
   console.log("ExpensiveComponent rendered");
   return (
     <div>
+      <h4>I am expensive component</h4>
       <p>Value: {value}</p>
       <p>Computed Sum: {result}</p>
     </div>

@@ -26,23 +26,6 @@ const NumberList = () => (
   <List items={numbers} renderItem={(item) => <span>{item}</span>} />
 );
 
-//GENERIC STATE HOOK
-function useGenericState<T>(initialState: T) {
-  const [state, setState] = useState<T>(initialState);
-  return [state, setState] as const;
-}
-
-const MyComponent = () => {
-  const [value, setValue] = useGenericState<string>("Hello, World!");
-
-  return (
-    <div>
-      <input value={value} onChange={(e) => setValue(e.target.value)} />
-      <p>{value}</p>
-    </div>
-  );
-};
-
 //GENERIC CONTEXT
 interface ContextProps<T> {
   value: T;
@@ -118,7 +101,6 @@ const ContextPage = () => (
 );
 
 //GENERIC CONTEXT FOR USER_SETTINGS
-
 interface Address {
   street: string;
   city: string;
@@ -144,11 +126,11 @@ interface UserProfile {
 }
 
 // Usage
-const { useGenericContext, GenericProvider } =
+const { useGenericContext: useUserProfileContext, GenericProvider: UserProfileProvider } =
   createGenericContext<UserProfile>();
 
 const ProfileComponent = () => {
-  const { value, updateValue } = useGenericContext();
+  const { value, updateValue } = useUserProfileContext();
 
   const updateTheme = () => {
     updateValue({
@@ -202,9 +184,9 @@ const initialProfile: UserProfile = {
 };
 
 const UserPage = () => (
-  <GenericProvider initialValue={initialProfile}>
+  <UserProfileProvider initialValue={initialProfile}>
     <ProfileComponent />
-  </GenericProvider>
+  </UserProfileProvider>
 );
 
 //FORM MANAGEMENT

@@ -1,9 +1,10 @@
 import TypeVsInterfaceTable from "../components/type-vs-interface-table";
 
-export const Home = () => {
+export const TypeVsInterface = () => {
   return (
     <>
-      <h1>Hello!</h1>
+      <h1>Type Vs Interface</h1>
+      <TypeVsInterfaceTable />
     </>
   );
 };

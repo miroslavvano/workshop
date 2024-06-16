@@ -8,6 +8,8 @@ import { PushWorker } from "./pages/PushWorker";
 import { useEffect } from "react";
 import { PerformanceWorker } from "./pages/PerformanceWorker";
 import { ControlledFormPage } from "./pages/ControlledFormPage";
+import { FormInputs } from "./pages/FormInputs";
+import { TypeVsInterface } from "./pages/TypeVsInterface";
 
 function App() {
   useEffect(() => {
@@ -30,13 +32,19 @@ function App() {
             <Link to="/">Home</Link>
           </li>
           <li>
+            <Link to="/type-vs-interface">Type vs Interface</Link>
+          </li>
+          <li>
+            <Link to="/form-inputs">Form Inputs</Link>
+          </li>
+          <li>
+            <Link to="/controlled">Controlled Form</Link>
+          </li>
+          <li>
+            <Link to="/uncontrolled">Uncontrolled Form</Link>
+          </li>
+          <li>
             <Link to="/async">Async</Link>
-          </li>
-          <li>
-            <Link to="/controlled">Cotrolled Form</Link>
-          </li>
-          <li>
-            <Link to="/uncontrolled">Uncotrolled Form</Link>
           </li>
           <li>
             <Link to="/push-worker">Push Worker</Link>
@@ -48,7 +56,9 @@ function App() {
       </nav>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/type-vs-interface" element={<TypeVsInterface />} />
         <Route path="/async" element={<Async />} />
+        <Route path="/form-inputs" element={<FormInputs />} />
         <Route path="/uncontrolled" element={<UncontrolledFormPage />} />
         <Route path="/controlled" element={<ControlledFormPage />} />
         <Route path="/push-worker" element={<PushWorker />} />
