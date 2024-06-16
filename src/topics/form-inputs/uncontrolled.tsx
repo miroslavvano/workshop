@@ -29,17 +29,16 @@ export const UncontrolledForm: React.FC = () => {
         ref={emailRef}
         defaultValue="john@example.com"
       />
-
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-
       <button type="submit">Submit</button>
+
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
     </form>
   );
 };

@@ -35,17 +35,16 @@ export const ControlledForm: React.FC = () => {
         value={email}
         onChange={handleEmailChange}
       />
-
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-      <ExpensiveComponent value={1} />
-
       <button type="submit">Submit</button>
+
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
+      <ExpensiveComponent value={1} />
     </form>
   );
 };
