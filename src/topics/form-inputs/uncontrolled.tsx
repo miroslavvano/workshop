@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { InputComponent } from "./input";
+import { InputComponent } from "../../components/input";
 
 export const UncontrolledForm: React.FC = () => {
   const nameRef = useRef<HTMLInputElement>(null);
@@ -15,7 +15,7 @@ export const UncontrolledForm: React.FC = () => {
   console.log("Uncontrolled form rendered");
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <InputComponent
         label="name"
         type="text"

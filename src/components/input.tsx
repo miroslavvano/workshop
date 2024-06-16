@@ -9,7 +9,7 @@ export const InputComponent = forwardRef<HTMLInputElement, InputComponentProps>(
     const { label, ...inputProps } = props;
     console.log("InputComponent rendered:", label);
     return (
-      <div>
+      <div className="input">
         <label>{label}</label>
         <input type="text" ref={ref} {...inputProps} />
       </div>

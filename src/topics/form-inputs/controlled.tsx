@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { InputComponent } from "./input";
+import { InputComponent } from "../../components/input";
 
 export const ControlledForm: React.FC = () => {
   const [name, setName] = useState("John Doe");
@@ -21,7 +21,7 @@ export const ControlledForm: React.FC = () => {
   console.log("Controlled form rendered");
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form" onSubmit={handleSubmit}>
       <InputComponent
         label="name"
         type="text"

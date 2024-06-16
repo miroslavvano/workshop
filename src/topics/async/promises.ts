@@ -9,6 +9,13 @@ export function bookFlight() {
   });
 }
 
+export async function bookFlightSync() {
+  return fetch("https://api.example.com/bookFlight")
+    .then((response) => response.json())
+    .then((data) => "Flight booked: " + data.flightNumber)
+    .catch((err) => err);
+}
+
 export function bookHotel() {
   return new Promise((resolve, reject) => {
     fetch("https://api.example.com/bookHotel")

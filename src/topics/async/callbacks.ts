@@ -11,9 +11,12 @@ export function pizzaDelivered(message: string) {
 
 orderPizza(pizzaDelivered);
 
-orderCake((cake) => {
-  inviteFriends((friends) => {
-    decorate(() => {
+orderCake((cake, error) => {
+  console.log(error);
+  inviteFriends((friends, error) => {
+    console.log(error);
+    decorate((error) => {
+      console.log(error);
       console.log("Party is ready with", cake, "and", friends);
     });
   });

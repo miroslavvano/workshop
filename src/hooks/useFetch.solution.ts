@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 
 type FetchResult<T> = {
   data: T | null;
   error: string | null;
   loading: boolean;
+  refetch: () => void;
 };
 
 type UseFetchArgs<T> = {
@@ -13,7 +14,7 @@ type UseFetchArgs<T> = {
   onError?: () => void;
 };
 
-const useFetch = <T>({
+export const useFetch = <T>({
   url,
   options,
   onError,
@@ -22,12 +23,19 @@ const useFetch = <T>({
   const [data, setData] = useState<T | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
+  const [trigger, setTrigger] = useState<number>(0);
+
+  const memoizedOptions = useMemo(() => options, [options]);
+
+  const refetch = () => {
+    setTrigger(Math.random());
+  };
 
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
       try {
-        const response = await fetch(url, options);
+        const response = await fetch(url, memoizedOptions);
         if (!response.ok) {
           throw new Error(`Error: ${response.statusText}`);
         }
@@ -48,9 +56,7 @@ const useFetch = <T>({
     };
 
     fetchData();
-  }, [url, options, onSuccess, onError]);
+  }, [url, onSuccess, onError, memoizedOptions, trigger]);
 
-  return { data, error, loading };
+  return { data, error, loading, refetch };
 };
-
-export default useFetch;

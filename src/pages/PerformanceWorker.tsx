@@ -49,7 +49,7 @@ export const PerformanceWorker = () => {
           defaultValue={workerLimit}
         />
       </div>
-      <div>
+      <div className="buttonGroup">
         <button onClick={handleFindPrimes}>Find Primes With Worker</button>
         <button onClick={handleFindPrimesWithMain}>
           Find Primes With Main Thread
@@ -58,7 +58,7 @@ export const PerformanceWorker = () => {
 
       <div>{primes}</div>
       {loading && <p>Calculating...</p>}
-      <textarea />
+      <textarea className="textarea" />
       {/* <ul>
         {primes.map((prime) => (
           <li key={prime}>{prime}</li>
