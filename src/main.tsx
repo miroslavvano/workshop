@@ -17,4 +17,26 @@ if ("serviceWorker" in navigator) {
   }
 }
 
+/**
+ * Consider a scenario where a user fills out a form while offline.
+ * You can save the form data in IndexedDB and then register a sync event.
+ * When the sync event triggers (when connectivity is restored),
+ * the service worker retrieves the data 
+ * from IndexedDB and sends it to the server.
+ */
+
+//register sync event
+// if ("serviceWorker" in navigator && "SyncManager" in window) {
+//   navigator.serviceWorker.ready
+//     .then((swRegistration) => {
+//       return swRegistration.sync.register("sync-tag");
+//     })
+//     .then(() => {
+//       console.log("Sync registered successfully");
+//     })
+//     .catch((error) => {
+//       console.log("Sync registration failed:", error);
+//     });
+// }
+
 ReactDOM.createRoot(document.getElementById("root")!).render(<App />);

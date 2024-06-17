@@ -13,3 +13,11 @@ declare module "web-push" {
     keys: { auth: string; p256dh: string };
   };
 }
+
+interface ServiceWorkerRegistration {
+  sync: SyncManager;
+}
+
+interface SyncManager {
+  register(tag: string): Promise<void>;
+}
