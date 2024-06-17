@@ -27,14 +27,39 @@ const ServiceWorkersTable = () => {
 
 const tableData = [
   {
-    aspect: "Definition",
+    aspect: "Lifecycle",
     description:
-      "Service Workers are scripts that run in the background, separate from the web page, providing features that don’t need a web page or user interaction.",
+      "Service Workers have a lifecycle that includes registration, installation, activation, and termination.",
+  },
+  {
+    aspect: "Registration",
+    description:
+      "A Service Worker is registered in the web application using JavaScript. This typically happens during the loading of the web page",
+  },
+  {
+    aspect: "Installation",
+    description:
+      "Once registered, the Service Worker starts the installation process. This is where it usually caches the necessary resources.",
+  },
+  {
+    aspect: "Activation",
+    description:
+      "After the installation, the Service Worker activates. This phase is used to clean up old caches and ensure that the new Service Worker takes control.",
+  },
+  {
+    aspect: "Interception",
+    description:
+      "After activation, the Service Worker can intercept network requests, allowing it to serve cached content, fetch new data, or manipulate responses.",
   },
   {
     aspect: "Offline Support",
     description:
       "They enable applications to work offline by intercepting network requests and serving cached content.",
+  },
+  {
+    aspect: "Background Sync",
+    description:
+      "Service Workers support background synchronization, ensuring that user actions (like sending a message) are completed when the network is available.",
   },
   {
     aspect: "Caching",
@@ -47,19 +72,9 @@ const tableData = [
       "They enable push notifications, allowing web applications to receive messages from a server even when the application is not open.",
   },
   {
-    aspect: "Background Sync",
-    description:
-      "Service Workers support background synchronization, ensuring that user actions (like sending a message) are completed when the network is available.",
-  },
-  {
     aspect: "Event-Driven",
     description:
       "They operate on an event-driven model, listening for events such as fetch, push, and sync to perform tasks.",
-  },
-  {
-    aspect: "Progressive Web Apps",
-    description:
-      "Service Workers are a key technology behind Progressive Web Apps (PWAs), enabling features like offline functionality, push notifications, and background sync.",
   },
 ];
 
